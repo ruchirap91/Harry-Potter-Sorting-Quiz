@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=<tag:charset />">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		/*CSS RESET STARTS*/
+		html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+		article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+		body {line-height: 1;margin:0;}
+		ol, ul {list-style: none;}
+		blockquote, q {quotes: none;}
+		blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;}
+		table {border-collapse: collapse;border-spacing: 0;}
+		/*CSS RESET ENDS*/
+		body{background: #000 url('HpBackgroundbyRuchira.png') center 0 no-repeat;background-size: cover; color:#fff;}
+		form{width: 800px; height: auto;margin:100px auto;background: rgba(51,51,51,0.6);padding: 10px;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;border:1px solid #ccc;}
+		form h3{color:#fff; font-family: arial;font-size: 21px;line-height: 1.5;text-align: center;text-transform: capitalize;padding:10px 0; text-shadow: 1px 1px #ccc;}
+		ul{padding:5px; font-size: 16px; line-height: 1.5;font-family: arial;}
+		li{padding:5px;}
+		.submit{text-transform: uppercase;background-color: white;width: 200px;height: 60px;margin: 10px auto;text-align: center;background: rgba(204, 0, 0, 0.5);outline: none;border: 0;color: #fff;font-size: 25px;letter-spacing: 3px;font-weight: bold;display: block;cursor: pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+		label{cursor: pointer;	}
+		#sortingResults{width: 500px;height: 500px;position: absolute;left:0;top:20px;margin-left:0px;margin:20px auto 0;background: #000;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; border:1px solid #fff;color:#fff;font-size: 20px;line-height: 25px;text-align: center;
+		}
+	</style>
+	<body>
+		<div id="sortingResults" style="display: none;"> <p></p></div>
+		<form name="main">
+			<h3>Answer the questions below to get sorted:</h3>
+			<div class="questionwrap">
+				<ul class="q1-ul" id="q1-ul">
+					<h4 class="q1">Which of the following would you most hate people to call you?</h4>
+					<li><label><input class="radio" type="radio" name="ans1" value="a1" checked /> Selfish<br></label></li>
+					<li><label><input  class="radio" type="radio" name="ans1" value="a2" /> Ordinary<br></label></li>
+					<li><label><input  class="radio" type="radio" name="ans1" value="a3" /> Ignorant<br></label></li>
+					<li><label><input  class="radio" type="radio" name="ans1" value="a4" /> Cowardly<br></label></li>
+				</ul>
+
+				<ul class="q2-ul" id="q2-ul">
+					<h4 class="q1">Once every century, the Flutterby bush produces flowers that adapt their scent to attract the unwary. If it lured you, it would smell of:</h4>
+					<li><label><input class="radio"  type="radio" name="ans2" value="b1" checked  /> A crackling log fire<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans2" value="b2" />  Fresh parchment<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans2" value="b3" /> Home<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans2" value="b4" /> The sea<br></label></li>
+				</ul>
+
+				<ul class="q3-ul" id="q3-ul">
+					<h4 class="q1">Which of the following do you find most difficult to deal with?</h4>
+					<li><label><input class="radio"  type="radio" name="ans3" value="c1"  checked /> Hunger<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans3" value="c2" /> Cold<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans3" value="c3" /> Loneliness<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans3" value="c4" /> Boredom<br></label></li>
+				</ul>
+
+				<ul class="q4-ul" id="q4-ul">
+					<h4 class="q1">Given the choice, would you rather invent a potion that would guarantee you:</h4>
+					<li><label><input class="radio"  type="radio" name="ans4" value="d1"   checked /> Glory<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans4" value="d2" /> Wisdom<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans4" value="d3" /> Love<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans4" value="d4" /> Power<br></label></li>
+				</ul>
+
+				<ul class="q5-ul" id="q5-ul">
+					<h4 class="q1"> Which road tempts you most?</h4>
+					<li><label><input class="radio"  type="radio" name="ans5" value="e1"  checked /> The wide, sunny, grassy lane<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans5" value="e2" /> The twisting, leaf-strewn path through woods<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans5" value="e3" /> The cobbled street lined with ancient buildings<br></label></li>
+					<li><label><input class="radio"  type="radio" name="ans5" value="e4" /> The narrow, dark, lantern-lit alley<br></label></li>
+				</ul>
+				<button name="submit" type="button" value="submit" class="submit" onclick="compute()"> submit </button>
+			</div>
+		</form>
+		<script type="text/javascript">
+			var result = {};
+			result[0] = {name: "Gryffindor", count: 0};
+			result[1] = {name: "Slytherin", count: 0};
+			result[2] = {name: "Ravenclaw", count: 0};
+			result[3] = {name: "Hufflepuff", count: 0};
+
+			function compute(){
+				var checked1 = document.querySelector('input[name="ans1"]:checked').value;
+
+				var checked2 = document.querySelector('input[name="ans2"]:checked').value;
+
+				var checked3 = document.querySelector('input[name="ans3"]:checked').value;
+
+				var checked4 = document.querySelector('input[name="ans4"]:checked').value;
+
+				var checked5 = document.querySelector('input[name="ans5"]:checked').value;
+
+				if(checked1 == "a1"){
+					result[0].count+=1;
+				}
+				else if(checked1=="a2")
+				{
+					result[1].count+=1;
+				}
+				else if (checked1=="a3") {
+					result[2].count+=1;
+				}
+				else{
+					result[3]+=1;
+				}
+
+
+				if(checked2 == "b1"){
+					result[0].count+=1;
+				}
+				else if(checked2=="b2")
+				{
+					result[1].count+=1;
+				}
+				else if (checked2=="b3") {
+					result[2].count+=1;
+				}
+				else{
+					result[3]+=1;
+				}
+
+				if(checked3 == "c1"){
+					result[0].count+=1;
+				}
+				else if(checked3== "c2")
+				{
+					result[1].count+=1;
+				}
+				else if (checked3== "c3") {
+					result[2].count+=1;
+				}
+				else{
+					result[2]+=1;
+				}
+
+				if(checked4 == "d1"){
+					result[0].count+=1;
+				}
+				else if(checked4== "d2")
+				{
+					result[1].count+=1;
+				}
+				else if (checked4== "d3") {
+					result[2].count+=1;
+				}
+				else{
+					result[3]+=1;
+				}
+
+				if(checked5 == "e1"){
+					result[0].count+=1;
+				}
+				else if(checked5== "e2")
+				{
+					result[1].count+=1;
+				}
+				else if (checked5== "e3") {
+					result[2].count+=1;
+				}
+				else{
+					result[3]+=1;
+				}
+
+
+				var max = Math.max(result[0].count,result[1].count,result[2].count,result[3].count);
+
+				var rst = [result[0].count,result[1].count,result[2].count,result[3].count];
+				var index1 = rst.indexOf(Math.max(result[0].count,result[1].count,result[2].count,result[3].count));
+
+				var sortedHouse;
+
+				if(index1 == 0){
+					sortedHouse = "Gryffindor";
+				}
+				else if (index1 == 1) {
+					sortedHouse = "Slytherin";
+				}
+
+				else if (index1 == 2) {
+					sortedHouse = "Ravenclaw";
+				}
+				else{
+					sortedHouse = "Hufflepuff";
+				}
+
+
+alert("You have been sorted into " + sortedHouse);
+
+}
+
+</script>
+</body>
+</html>
